@@ -1,10 +1,12 @@
+/* Algemene stijlen */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
-/*popup style*/
+
+/* Popup style */
 .popup {
     display: none; /* Verborgen standaard */
     position: fixed;
@@ -149,6 +151,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .hero-text {
     position: absolute;
     top: 50%;
@@ -157,6 +160,7 @@ section {
     color: white;
     text-align: center;
 }
+
 .hero-nav ul {
     display: flex;
     justify-content: center;
@@ -174,6 +178,7 @@ section {
     text-decoration: none;
     font-size: 18px;
 }
+
 .hero h1 {
     color: white;
     font-size: 120px;
@@ -257,7 +262,6 @@ footer {
     color: #ecc777; /* Hover kleur voor de GDPR link */
 }
 
-
 /* Foto galerij */
 .gallery-grid {
     display: grid;
@@ -278,4 +282,89 @@ form {
     gap: 15px;
     width: 300px;
     margin: 0 auto;
+}
+
+/* Media queries voor responsiviteit */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info,
+    .social-media {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .hero {
+        height: 600px; /* Pas de hoogte aan voor kleinere schermen */
+    }
+
+    .hero h1 {
+        font-size: 60px; /* Verklein de tekstgrootte voor kleinere schermen */
+    }
+
+    .hero-nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hero-nav ul li {
+        margin: 10px 0;
+    }
+
+    .order-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-text p {
+        font-size: 1em;
+    }
+
+    .footer-social a {
+        font-size: 20px;
+    }
+
+    .footer-links a {
+        font-size: 1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 400px; /* Pas de hoogte aan voor nog kleinere schermen */
+    }
+
+    .hero h1 {
+        font-size: 40px; /* Verklein de tekstgrootte voor nog kleinere schermen */
+    }
+
+    .order-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .footer-text p {
+        font-size: 0.9em;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
 }
