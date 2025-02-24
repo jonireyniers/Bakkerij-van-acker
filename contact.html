@@ -1,0 +1,28 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bakkerij Van Acker Mario</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Deze div wordt vervangen door de inhoud van headerbanner.html -->
+    <div id="headerbanner"></div>
+
+    <!-- Jouw andere pagina-inhoud hier -->
+
+    <script>
+        // Laad de inhoud van headerbanner.html in de div met het ID 'headerbanner'
+        fetch('headerbanner.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('headerbanner').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading headerbanner.html:', error));
+    </script>
+
+</body>
+</html>
