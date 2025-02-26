@@ -1,25 +1,35 @@
 /* Algemene stijlen */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Zorgt ervoor dat de body altijd minimaal de hoogte van het scherm vult */
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    box-sizing: border-box; /* Toegevoegd voor betere controle */
+    box-sizing: border-box;
+}
+
+main {
+    flex: 1;
+}
+
+/* Voeg padding-bottom toe aan de container van je webshop */
+#my-store-113020275 {
+    flex: 1;
+
+    padding-bottom: 1000px; /* Voeg hier extra ruimte toe onderaan de webshop */
 }
 
 /* Popup style */
 .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex; /* Verander van 'none' naar 'flex' om te centreren */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Zorg ervoor dat de popup boven alles verschijnt */
+    display: none; /* Verberg standaard */
 }
+
 .popup-content {
     background-color: white;
     padding: 20px;
@@ -27,7 +37,7 @@ body {
     text-align: center;
     width: 80%;
     max-width: 400px;
-    position: relative;
+    position: relative; /* Nodig voor de positionering van de close-btn */
 }
 
 .close-btn {
@@ -154,6 +164,7 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 100px;
 }
 
 .hero-text {
@@ -210,8 +221,9 @@ section {
 footer {
     background-color: #433c2e; /* Achtergrondkleur footer */
     color: white; /* Tekstkleur */
-    padding: 40px 20px;
+    padding: 10px 0;
     text-align: center;
+    margin-top: auto; /* Voegt de auto-margin toe om de footer onderaan te plaatsen */
 }
 
 .footer-container {
@@ -291,7 +303,121 @@ form {
     width: 300px;
     margin: 0 auto;
 }
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .hero {
+        height: 700px; /* Pas de hoogte aan voor laptops */
+    }
 
+    .hero h1 {
+        font-size: 3rem; /* Verklein de tekstgrootte voor laptops */
+    }
+
+    .order-btn {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-text p {
+        font-size: 1.1em;
+    }
+
+    .footer-social a {
+        font-size: 22px;
+    }
+
+    .footer-links a {
+        font-size: 1.1em;
+    }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+    .hero {
+        height: 600px; /* Pas de hoogte aan voor tablets */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Verklein de tekstgrootte voor tablets */
+    }
+
+    .order-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Twee kolommen voor tablets */
+    }
+
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-text p {
+        font-size: 1em;
+    }
+
+    .footer-social a {
+        font-size: 20px;
+    }
+
+    .footer-links a {
+        font-size: 1em;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 400px; /* Pas de hoogte aan voor gsm's */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Verklein de tekstgrootte voor gsm's */
+    }
+
+    .order-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Eén kolom voor gsm's */
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .social-media {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-text p {
+        font-size: 0.9em;
+    }
+
+    .footer-social a {
+        font-size: 18px;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+    }
+
+    form {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
 /* Media queries voor responsiviteit */
 @media (max-width: 768px) {
     .top-bar {
@@ -353,26 +479,25 @@ form {
         padding: 0 20px;
     }
 }
-
 @media (max-width: 480px) {
     .hero {
-        height: 400px; /* Pas de hoogte aan voor nog kleinere schermen */
+        height: 300px; /* Pas de hoogte aan voor zeer kleine schermen */
     }
 
     .hero h1 {
-        font-size: 40px; /* Verklein de tekstgrootte voor nog kleinere schermen */
+        font-size: 1.5rem; /* Verklein de tekstgrootte voor zeer kleine schermen */
     }
 
     .order-btn {
-        padding: 6px 12px;
-        font-size: 14px;
+        padding: 4px 8px;
+        font-size: 12px;
     }
 
     .footer-text p {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .footer-links a {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }

@@ -2,24 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pop-up functionaliteit
     const popup = document.getElementById('popup');
     const closeBtn = document.querySelector('.close-btn');
+    const SHOW_POPUP_AFTER_HOURS = 1; // Tijd in uren
+    const popupStorageKey = "popup_last_shown"; // Sleutel voor localStorage
+
+    function shouldShowPopup() {
+        const lastShown = localStorage.getItem(popupStorageKey);
+        if (!lastShown) return true; // Eerste keer? Toon pop-up
+
+        const lastShownTime = parseInt(lastShown, 10);
+        const currentTime = new Date().getTime();
+        const timeDifference = (currentTime - lastShownTime) / (1000 * 60 * 60); // Omrekenen naar uren
+
+        return timeDifference >= SHOW_POPUP_AFTER_HOURS; // True als pop-up opnieuw moet verschijnen
+    }
+
+    function showPopup() {
+        if (popup && shouldShowPopup()) {
+            popup.style.display = 'flex'; // Pop-up tonen
+            localStorage.setItem(popupStorageKey, new Date().getTime()); // Tijd opslaan
+        } else {
+            popup.style.display = 'none'; // Zorg ervoor dat de pop-up verborgen blijft
+        }
+    }
+
+    function closePopup() {
+        popup.style.display = 'none';
+    }
 
     if (popup) {
-        popup.style.display = 'flex'; // Verander van 'block' naar 'flex' om te centreren
+        showPopup(); // Controleer en toon indien nodig de pop-up
 
         if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                popup.style.display = 'none';
-            });
+            closeBtn.addEventListener('click', closePopup);
         }
 
         popup.addEventListener('click', (event) => {
             if (event.target === popup) {
-                popup.style.display = 'none';
+                closePopup();
             }
         });
     }
 
-    // De lijst met acht verschillende foto's
+    // 🎨 Lijst met acht verschillende foto's voor de achtergrond
     const images = [
         'assets/images/bakker.jpg',
         'assets/images/dessertje.jpg',
@@ -43,9 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Roep de functie onmiddellijk aan om de achtergrond in te stellen
+    // 🎨 Stel de achtergrond direct in en herhaal elke 8 seconden
     changeBackground();
-
-    // Stel de achtergrond elke 5 seconden in
     setInterval(changeBackground, 8000);
 });
