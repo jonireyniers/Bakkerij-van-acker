@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    box-sizing: border-box; /* Toegevoegd voor betere controle */
 }
 
 /* Popup style */
@@ -14,11 +15,11 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* Verberg de popup standaard */
+    display: flex; /* Verander van 'none' naar 'flex' om te centreren */
     justify-content: center;
     align-items: center;
+    z-index: 1000; /* Zorg ervoor dat de popup boven alles verschijnt */
 }
-
 .popup-content {
     background-color: white;
     padding: 20px;
@@ -26,6 +27,7 @@ body {
     text-align: center;
     width: 80%;
     max-width: 400px;
+    position: relative;
 }
 
 .close-btn {
@@ -34,14 +36,15 @@ body {
     right: 10px;
     cursor: pointer;
     font-size: 24px;
+    outline: none; /* Toegevoegd voor betere focus stijl */
 }
-
 
 .close-btn:hover,
 .close-btn:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 @keyframes fadeIn {
@@ -93,6 +96,7 @@ body {
 .contact-info span:hover,
 .contact-info a:hover {
     color: white; /* Wit bij hover */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 /* Social media iconen */
@@ -109,6 +113,7 @@ body {
 
 .social-media a:hover {
     color: white; /* Wit bij hover */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 /* Navigatie menu */
@@ -133,6 +138,7 @@ nav ul li a {
 /* Hover effect voor menu-items */
 nav ul li a:hover {
     color: #ff5722; /* Oranje kleur bij hover */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 /* Kleur voor alle secties onder de menu bar */
@@ -197,6 +203,7 @@ section {
 
 .order-btn:hover {
     background-color: #e64a19; /* Donkere oranje bij hover */
+    transition: background-color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 /* Footer */
@@ -232,6 +239,7 @@ footer {
 
 .footer-social a:hover {
     color: white; /* Wit bij hover voor de iconen */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 .footer-links a {
@@ -244,6 +252,7 @@ footer {
 
 .footer-links a:hover {
     color: #ecc777; /* Hover kleur voor de links */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 .footer-copyright p {
@@ -258,6 +267,7 @@ footer {
 
 .footer-copyright a:hover {
     color: #ecc777; /* Hover kleur voor de GDPR link */
+    transition: color 0.3s ease; /* Toegevoegd voor vloeiendere overgang */
 }
 
 /* Foto galerij */

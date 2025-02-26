@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-btn');
 
     if (popup) {
-        popup.style.display = 'block';
+        popup.style.display = 'flex'; // Verander van 'block' naar 'flex' om te centreren
 
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
     changeBackground();
 
     // Stel de achtergrond elke 5 seconden in
-    setInterval(changeBackground, 5000);
+    setInterval(changeBackground, 8000);
 });
