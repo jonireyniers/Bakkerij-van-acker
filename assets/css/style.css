@@ -17,6 +17,61 @@ body {
 main {
     flex: 1;
 }
+/* Intro sectie */
+.intro {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Specialiteiten sectie */
+.specialiteiten {
+    background-color: #f7f3ec;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.specialiteiten h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.specialiteit {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    box-sizing: border-box;
+}
+
+.specialiteit img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.specialiteit h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 15px;
+}
+
+.specialiteit p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
 
 /* Voeg padding-bottom toe aan de container van je webshop */
 #my-store-113020275 {

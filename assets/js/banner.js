@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 🎨 Lijst met acht verschillende foto's voor de achtergrond
     const images = [
         'assets/images/bakker.jpg',
-        'assets/images/dessertje.jpg',
+        'assets/images/dessert.jpg',
         'assets/images/pralines.jpg',
         'assets/images/kerstboom.jpg',
         'assets/images/lekker.jpg',
